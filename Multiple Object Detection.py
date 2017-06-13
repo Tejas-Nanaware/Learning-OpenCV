@@ -27,7 +27,7 @@ while True:
 	pink_mask = cv2.inRange(hsv, lower_pink, upper_pink)
 	green_mask = cv2.inRange(hsv, lower_green, upper_green)
 	mask = pink_mask + green_mask
-	
+
 	res = cv2.bitwise_and(frame, frame, mask = mask)
 
 	cv2.imshow('frame', frame)

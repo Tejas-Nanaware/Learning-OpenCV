@@ -41,9 +41,18 @@ while True:
 	# Bilateral Blur
 	bilateral = cv2.bilateralFilter(res, 15, 75, 75)
 
+	# For erosion and dilation
+	kernel = np.ones((5,5), np.uint8)
+	erosion = cv2.erode(mask, kernel, iterations = 1)
+	dilate = cv2.dilate(mask, kernel, iterations = 1)
+
+	# Opening and closing removes false positives that are in the background
+	opening = cv2.morphologyEx(median_blur, cv2.MORPH_OPEN, kernel)
+	closing = cv2.morphologyEx(median_blur, cv2.MORPH_CLOSE, kernel)
+
 	cv2.imshow('frame', frame)
 	cv2.imshow('res', res)
-	cv2.imshow('blur', bilateral)
+	cv2.imshow('blur', median_blur)
 	
 	k = cv2.waitKey(5) & 0xFF
 	if k == 27:

@@ -12,6 +12,7 @@ while True:
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 	# Hue Saturation Value
 	# http://colorizer.org/ for knowing color hsv values
+	# Or Gimp or photoshop H/2, %S*255, %V*255 for OpenCV Values
 	lower_green = np.array([29, 86, 6])
 	upper_green = np.array([64, 255, 255])
 

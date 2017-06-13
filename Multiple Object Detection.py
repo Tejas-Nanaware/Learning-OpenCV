@@ -16,11 +16,18 @@ while True:
 	lower_pink = np.array([165, 160, 140])
 	upper_pink = np.array([179, 255, 255])
 
+	lower_green = np.array([29, 86, 6])
+	upper_green = np.array([64, 255, 255])
+
 	# for specific color
 	# dark_red = np.uint8([[[12, 22, 121]]])
 	# dark_red = cv2.cvtColor(dark_red, cv2.COLOR_BGR2HSV)
 
-	mask = cv2.inRange(hsv, lower_pink, upper_pink)
+	# For multicolor filtering, make two masks and add them
+	pink_mask = cv2.inRange(hsv, lower_pink, upper_pink)
+	green_mask = cv2.inRange(hsv, lower_green, upper_green)
+	mask = pink_mask + green_mask
+	
 	res = cv2.bitwise_and(frame, frame, mask = mask)
 
 	cv2.imshow('frame', frame)

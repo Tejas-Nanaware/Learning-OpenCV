@@ -23,9 +23,15 @@ while True:
 	mask = cv2.inRange(hsv, lower_pink, upper_pink)
 	res = cv2.bitwise_and(frame, frame, mask = mask)
 
+	# For erosion and dilation
+	kernel = np.ones((5,5), np.uint8)
+	erosion = cv2.erode(mask, kernel, iterations = 1)
+	dilate = cv2.dilate(mask, kernel, iterations = 1)
+
 	cv2.imshow('frame', frame)
-	cv2.imshow('mask', mask)
 	cv2.imshow('res', res)
+	cv2.imshow('erode', erosion)
+	cv2.imshow('dilate', dilate)
 	
 	k = cv2.waitKey(5) & 0xFF
 	if k == 27:

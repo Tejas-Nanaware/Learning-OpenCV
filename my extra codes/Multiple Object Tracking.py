@@ -18,8 +18,8 @@ while True:
 	lower_pink = np.array([165, 160, 76])
 	upper_pink = np.array([179, 255, 255])
 
-	lower_green = np.array([29, 86, 6])
-	upper_green = np.array([64, 255, 255])
+	lower_green = np.array([20, 128, 102])
+	upper_green = np.array([35, 255, 204])
 
 	# For multicolor filtering, make two masks and add them
 	pink_mask = cv2.inRange(hsv, lower_pink, upper_pink)
@@ -30,10 +30,9 @@ while True:
 
 	# Morphological filtering
 	kernel = np.ones((15,15), np.float32) / 225
+	closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
 	dilate = cv2.dilate(res, kernel, iterations = 1)
 	blur = cv2.medianBlur(dilate, 1)
-
-	# blur = res
 	# Converting to gray
 	gray = cv2.cvtColor(blur, cv2.COLOR_HSV2BGR)
 	gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)

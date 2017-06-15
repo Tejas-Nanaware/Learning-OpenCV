@@ -13,7 +13,7 @@ while True:
 	# Hue Saturation Value
 	# http://colorizer.org/ for knowing color hsv values
 	# Or Gimp or photoshop H/2, %S*255, %V*255 for OpenCV Values
-	lower_pink = np.array([165, 160, 140])
+	lower_pink = np.array([165, 160, 76])
 	upper_pink = np.array([179, 255, 255])
 
 	lower_green = np.array([29, 86, 6])

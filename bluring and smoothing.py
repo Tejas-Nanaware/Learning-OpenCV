@@ -15,7 +15,7 @@ while True:
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 	# Hue Saturation Value
 	# http://colorizer.org/ for knowing color hsv values
-	lower_pink = np.array([165, 160, 140])
+	lower_pink = np.array([165, 160, 76])
 	upper_pink = np.array([179, 255, 255])
 
 	# for specific color

@@ -11,6 +11,9 @@ a_cascade = cv2.CascadeClassifier('aGest.xml')
 
 cap = cv2.VideoCapture(0)
 
+# To record the video
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('A gesture detected.avi', fourcc, 10.0, (640,480))
 while True:
 	ret, img = cap.read()
 	# Flip video
@@ -25,7 +28,7 @@ while True:
 		cv2.rectangle(img, (x,y), (x + w, y + h), (255, 0, 0), 2)
 		# roi_gray = gray[y:y+h, x:x+w]
 		# roi_color = img[y:y+h, x:x+w]
-	
+	out.write(img)
 	# Display video & Exit procedure
 	cv2.imshow('img', img)
 	key = cv2.waitKey(1) & 0xFF
@@ -33,5 +36,6 @@ while True:
 		break
 
 # Necessary Exit Procedure
+out.release()
 cap.release()
 cv2.destroyAllWindows()

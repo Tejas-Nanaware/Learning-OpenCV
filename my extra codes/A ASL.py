@@ -26,8 +26,8 @@ while True:
 		print "a"
 	for (x,y,w,h) in sign_a:
 		cv2.rectangle(img, (x,y), (x + w, y + h), (255, 0, 0), 2)
-		# roi_gray = gray[y:y+h, x:x+w]
-		# roi_color = img[y:y+h, x:x+w]
+	
+	# To record the video
 	out.write(img)
 	# Display video & Exit procedure
 	cv2.imshow('img', img)
@@ -36,6 +36,6 @@ while True:
 		break
 
 # Necessary Exit Procedure
-out.release()
+out.release() # To record the video
 cap.release()
 cv2.destroyAllWindows()

@@ -15,7 +15,7 @@ while True:
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
 	# Setting up the minimum and the maximum HSV values for object tracking
-	lower_pink = np.array([165, 160, 140])
+	lower_pink = np.array([165, 160, 76])
 	upper_pink = np.array([179, 255, 255])
 
 	lower_green = np.array([29, 86, 6])
@@ -31,8 +31,9 @@ while True:
 	# Morphological filtering
 	kernel = np.ones((15,15), np.float32) / 225
 	dilate = cv2.dilate(res, kernel, iterations = 1)
-	blur = cv2.GaussianBlur(dilate, (15,15), 0)
+	blur = cv2.medianBlur(dilate, 1)
 
+	# blur = res
 	# Converting to gray
 	gray = cv2.cvtColor(blur, cv2.COLOR_HSV2BGR)
 	gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)

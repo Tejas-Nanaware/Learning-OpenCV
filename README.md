@@ -1,5 +1,5 @@
-# Learning OpenCV
-In this repository, I have published the programs I created while learning OpenCV
+<h1 align="center">Learning OpenCV</h1>
+<p align="center">In this repository, I have published the programs I created while learning OpenCV</p>
 
 ## Installation
 1. Install Python (2.7)

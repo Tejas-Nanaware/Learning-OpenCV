@@ -10,7 +10,7 @@ You can also use pip to install OpenCV, MatPlotLib and Numpy.
 Simply follow these instructions.
 ├── pip install numpy
 ├── pip install matplotlib
-├── pip install opencv-python
+└── pip install opencv-python
 ```
 
 ## Extra Codes

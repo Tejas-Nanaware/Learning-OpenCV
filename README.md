@@ -2,7 +2,7 @@
 <p align="center">In this repository, I have published the programs I created while learning OpenCV</p>
 
 ## Installation
-1. Install Python (2.7)
+1. Install Python (2.7 / 3)
 2. Install OpenCV, MatPlotLib and Numpy packages
 3. You can run the code on PowerShell or Terminal
 ```
@@ -10,6 +10,7 @@ You can also use pip to install OpenCV, MatPlotLib and Numpy.
 Simply follow these instructions.
 ├── pip install numpy
 ├── pip install matplotlib
+├── pip install urllib (If you want to create your own Haar Cascade)
 └── pip install opencv-python
 ```
 

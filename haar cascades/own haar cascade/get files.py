@@ -16,7 +16,7 @@ def store_raw_images():
         print("made dir")
     for i in neg_image_urls.split('\n'):
         try:
-            print(i)
+            print(str(pic_num) + "\t" + i)
             urllib.request.urlretrieve(i, "neg/"+str(pic_num)+".jpg")
             img = cv2.imread("neg/"+str(pic_num)+".jpg",cv2.IMREAD_GRAYSCALE)
             # should be larger than samples / pos pic (so we can place our image on it)
